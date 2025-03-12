@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'javac Lab3.java'
+                sh 'javac src/Lab3.java'
             }
         }
 
