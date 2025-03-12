@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/DemoYourName.git'
+                git branch: 'main', 
+                    credentialsId: 'fba0a49a-219b-4bc6-b13f-50515e8be95b', 
+                    url: 'https://github.com/naine312/MyJavaProject.git'
             }
         }
 
