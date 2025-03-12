@@ -16,13 +16,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'javac Lab3.java || exit 1'
+                sh 'javac Lab3.java'
             }
         }
 
         stage('Run') {
             steps {
-                sh 'java -cp . Lab3'
+                sh 'java Lab3'
             }
         }
     }
