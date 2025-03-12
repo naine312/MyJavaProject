@@ -14,15 +14,24 @@ pipeline {
             }
         }
 
+        stage('Check Files') {
+            steps {
+                sh 'ls -R'
+            }
+        }
+
         stage('Build') {
             steps {
-                sh 'javac src/Lab3.java'
+                // Ensure the 'out' directory exists and compile the java files
+                sh 'mkdir -p out'
+                sh 'javac -d out src/main/java/com/sheridan/Main.java'
             }
         }
 
         stage('Run') {
             steps {
-                sh 'java Lab3'
+                // Run the compiled Java program
+                sh 'java -cp out com.sheridan.Main'
             }
         }
     }
